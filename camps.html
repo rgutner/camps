@@ -1,0 +1,48 @@
+<html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+var url = 'https://sheets.googleapis.com/v4/spreadsheets/1ushNqOtlbVS5cB4nzMFYYlGhQQ_mnmmTAgsJzFGxXig/values/tab1!A1:K1168?alt=json&key=AIzaSyAwQuG6kBUl-__nmOfHxg-CCaMUmvtuNkg';
+
+$.getJSON(url, function(data) {
+    let div = document.createElement("div");
+    for (let i = 1; i < 1168; i++) {
+      div.append('//////////////');
+      div.append(document.createElement("br"));
+      // Name
+      let h1 = document.createElement("h1");
+      h1.innerHTML = data.values[i][1];
+      div.append(h1);
+      // Location
+      div.append(data.values[i][6]);
+      div.append(document.createElement("div"));
+      // Description
+      div.append(document.createElement("br"));
+      div.append(data.values[i][7]);
+      div.append(document.createElement("div"));
+      // Image
+      if (typeof data.values[i][10] !== 'undefined' ) {
+        div.append(document.createElement("br"));
+        let image = document.createElement("div");
+        image.innerHTML = '<img src="' + data.values[i][10] + '"/>';
+        div.append(image);
+
+      }
+      // Web
+      if (typeof data.values[i][9] !== 'undefined' ) {
+        div.append(document.createElement("br"));
+        let link = document.createElement("div");
+        link.innerHTML = '<a href="' + data.values[i][9] + '" target="_blank">link<a/>';
+        div.append(link);
+
+      }
+
+    }
+
+    document.body.appendChild(div);
+    //
+});
+</script>
+<body style="font-family: Ariel">
+
+</body>
+</html>
