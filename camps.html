@@ -4,11 +4,11 @@
 </head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-var url = 'https://sheets.googleapis.com/v4/spreadsheets/1ushNqOtlbVS5cB4nzMFYYlGhQQ_mnmmTAgsJzFGxXig/values/tab1!A1:K1168?alt=json&key=AIzaSyAwQuG6kBUl-__nmOfHxg-CCaMUmvtuNkg';
+var url = 'https://sheets.googleapis.com/v4/spreadsheets/1ushNqOtlbVS5cB4nzMFYYlGhQQ_mnmmTAgsJzFGxXig/values/tab1!A1:T1001?alt=json&key=AIzaSyAwQuG6kBUl-__nmOfHxg-CCaMUmvtuNkg';
 
 $.getJSON(url, function(data) {
     let div = document.createElement("div");
-    for (let i = 1; i < 1168; i++) {
+    for (let i = 1; i < 1001; i++) {
       div.append(document.createElement("line"));
       div.append(document.createElement("br"));
 
@@ -23,11 +23,35 @@ $.getJSON(url, function(data) {
       div.append(document.createElement("br"));
       div.append(data.values[i][7]);
       div.append(document.createElement("div"));
-      // Image
-      if (typeof data.values[i][10] !== 'undefined' ) {
+      // Image 1
+      if (typeof data.values[i][16] !== 'undefined' ) {
         div.append(document.createElement("br"));
         let image = document.createElement("div");
-        image.innerHTML = '<img src="' + data.values[i][10] + '"/>';
+        image.innerHTML = '<img src="' + data.values[i][16] + '"/>';
+        div.append(image);
+
+      }
+      // Image 2
+      if (typeof data.values[i][17] !== 'undefined' ) {
+        div.append(document.createElement("br"));
+        let image = document.createElement("div");
+        image.innerHTML = '<img src="' + data.values[i][17] + '"/>';
+        div.append(image);
+
+      }
+      // Image 3
+      if (typeof data.values[i][18] !== 'undefined' ) {
+        div.append(document.createElement("br"));
+        let image = document.createElement("div");
+        image.innerHTML = '<img src="' + data.values[i][18] + '"/>';
+        div.append(image);
+
+      }
+      // Image 4
+      if (typeof data.values[i][19] !== 'undefined' ) {
+        div.append(document.createElement("br"));
+        let image = document.createElement("div");
+        image.innerHTML = '<img src="' + data.values[i][19] + '"/>';
         div.append(image);
 
       }
