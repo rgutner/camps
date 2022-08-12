@@ -1,0 +1,17 @@
+body > * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+line{
+width: 600px;
+height: 1px;
+border-bottom: 3px solid black;
+position: absolute;
+padding-top: 5px;
+
+}
+
+
+h1 {
+  color: #484b4f;
+}
