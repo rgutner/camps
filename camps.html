@@ -1,4 +1,7 @@
 <html>
+<head>
+  <link rel="stylesheet" href="camps.css">
+</head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 var url = 'https://sheets.googleapis.com/v4/spreadsheets/1ushNqOtlbVS5cB4nzMFYYlGhQQ_mnmmTAgsJzFGxXig/values/tab1!A1:K1168?alt=json&key=AIzaSyAwQuG6kBUl-__nmOfHxg-CCaMUmvtuNkg';
@@ -6,8 +9,9 @@ var url = 'https://sheets.googleapis.com/v4/spreadsheets/1ushNqOtlbVS5cB4nzMFYYl
 $.getJSON(url, function(data) {
     let div = document.createElement("div");
     for (let i = 1; i < 1168; i++) {
-      div.append('//////////////');
+      div.append(document.createElement("line"));
       div.append(document.createElement("br"));
+
       // Name
       let h1 = document.createElement("h1");
       h1.innerHTML = data.values[i][1];
