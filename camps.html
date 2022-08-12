@@ -23,6 +23,13 @@ $.getJSON(url, function(data) {
       div.append(document.createElement("br"));
       div.append(data.values[i][7]);
       div.append(document.createElement("div"));
+
+      // Events
+      div.append(document.createElement("br"));
+      div.append(data.values[i][8]);
+      div.append(document.createElement("div"));
+
+
       // Image 1
       if (typeof data.values[i][16] !== 'undefined' ) {
         div.append(document.createElement("br"));
